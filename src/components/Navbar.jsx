@@ -1,15 +1,17 @@
+import "../styles/navbar.css";
+
 function Navbar() {
   return (
-    <nav>
-      <h2>Jeva Portfolio</h2>
+    <nav className="navbar">
+      <h2 className="logo">Jeva Portfolio</h2>
 
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Experience</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+      <ul className="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Experience</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   );
