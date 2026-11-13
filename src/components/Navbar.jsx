@@ -1,17 +1,22 @@
 import "../styles/navbar.css";
+import navLinks from "../data/navLinks";
 
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2 className="logo">Jeva Portfolio</h2>
+      <div className="navbar-brand">
+        <span className="brand-icon">&lt; JS /&gt;</span>
+        <span className="brand-name"></span>
+      </div>
 
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Experience</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        {navLinks.map((link) => (
+          <li key={link.label}>
+            <a href={link.href}>
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </nav>
   );
