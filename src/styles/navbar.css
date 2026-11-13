@@ -1,5 +1,7 @@
-.navbar {
 
+/* Main navbar */
+
+.navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,20 +12,39 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 20px 50px;
+  padding: 16px 4%;
+  box-sizing: border-box;
 
   background-color: #222;
 }
 
-.logo {
-  color: white;
+/* Brand */
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
 }
+
+.brand-icon {
+  color: #61dafb;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  white-space: nowrap;
+}
+
+/* Desktop navigation */
 
 .nav-links {
   display: flex;
+  align-items: center;
   gap: 30px;
 
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -37,28 +58,71 @@
   color: #61dafb;
 }
 
-.navbar-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+/* Hamburger button */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+
+  background: transparent;
+  border: none;
+  padding: 8px;
   cursor: pointer;
 }
 
-.brand-icon {
-  color: #61dafb;
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -1px;
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #61dafb;
+  border-radius: 3px;
 }
 
-.brand-name {
-  color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  transition: color 0.3s ease;
-}
+/* Mobile navigation */
 
-.navbar-brand:hover .brand-name {
-  color: #61dafb;
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+    background-color: #222;
+    padding: 10px 0;
+    box-sizing: border-box;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+  }
+
+  .nav-links a:hover {
+    background-color: #303030;
+  }
 }

@@ -98,19 +98,53 @@
 /* Mobile layout */
 
 @media (max-width: 768px) {
+  .experience {
+    padding: 3rem 4%;
+  }
+
+  .experience-timeline {
+    padding: 1.5rem 0;
+  }
+
   .experience-entry {
-    grid-template-columns: 65px 1fr;
-    gap: 1rem;
+    grid-template-columns: 75px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Timeline date */
+  .timeline-marker {
+    padding-top: 1.5rem;
   }
 
   .timeline-date {
-    font-size: 0.7rem;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    margin-bottom: 1rem;
+    font-size: 0.68rem;
+    writing-mode: horizontal-tb;
+    transform: none;
+    white-space: normal;
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+    max-width: 75px;
   }
 
-  .timeline-marker {
-    padding-top: 1.5rem;
+  /* Timeline dot */
+  .timeline-dot {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Connecting line */
+  .timeline-marker::after {
+    top: 4.2rem;
+    bottom: -2rem;
+  }
+
+  /* Experience cards */
+  .experience-card-wrapper {
+    min-width: 0;
+  }
+
+  .experience-card-wrapper > * {
+    height: 100%;
+    box-sizing: border-box;
   }
 }
